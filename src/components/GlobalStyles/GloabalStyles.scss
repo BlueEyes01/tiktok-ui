@@ -5,6 +5,9 @@
 :root {
     --prymary: #ee4368;
 }
+* {
+    box-sizing: border-box;
+}
 html {
     font-size: 62.5%;
 }
