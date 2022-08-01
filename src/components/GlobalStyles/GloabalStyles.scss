@@ -4,9 +4,15 @@
 
 :root {
     --prymary: #ee4368;
+
+    //default layout
+    --default-layout-header-header: 60px;
+    --default-layout-width: 1150px;
 }
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html {
     font-size: 62.5%;
