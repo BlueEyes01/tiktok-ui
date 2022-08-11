@@ -5,13 +5,14 @@
 :root {
     --primary: #a22df0fb;
     --white: #fff;
+    --black: #000;
+    --text-color: #333;
+    --light: #5cd2ece3;
 
     //default layout
     --default-layout-header-header: 60px;
     --default-layout-width: 1150px;
-    --black: #000;
-    --text-color: #333;
-    --light: #5cd2ece3;
+    --default-layout-horizontal-spacer: 24px;
 }
 * {
     box-sizing: border-box;

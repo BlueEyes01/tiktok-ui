@@ -24,20 +24,34 @@ import AccountItem from '~/components/AccountItem';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon = {faEarthAsia} />,
-        title: 'English'
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tieng Viet',
+                },
+            ],
+        },
     },
     {
-        icon: <FontAwesomeIcon icon = {faCircleQuestion} />,
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
         title: 'Feedback and help',
-        to:'/feedback'
+        to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon = {faKeyboard} />,
-        title: 'Keyboard shortcuts'
-
-    }
-]
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -46,6 +60,14 @@ function Header() {
             setSearchResult([]);
         }, 0);
     }, []);
+    const handlerMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                break;
+            default:
+                break;
+        }
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -83,12 +105,11 @@ function Header() {
                     <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Login
                     </Button>
-                   <Menu
-                   items = {MENU_ITEMS}>
-                   <button className={cx('more-btn')}>
+                    <Menu items={MENU_ITEMS} onChange={handlerMenuChange}>
+                        <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
-                   </Menu>
+                    </Menu>
                 </div>
             </div>
         </header>
