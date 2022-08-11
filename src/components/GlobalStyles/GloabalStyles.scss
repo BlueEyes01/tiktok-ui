@@ -6,7 +6,7 @@
     --primary: #a22df0fb;
     --white: #fff;
     --black: #000;
-    --text-color: #333;
+    --text-color: #161823;
     --light: #5cd2ece3;
 
     //default layout
@@ -39,4 +39,24 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+//custom tippy
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-style: 1.6em;
+        line-height: 22px;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-content {
+        padding: 8px 9px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow ::before{
+        margin-bottom: 8px;
+    }
 }

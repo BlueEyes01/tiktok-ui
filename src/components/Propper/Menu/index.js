@@ -7,7 +7,6 @@ import MenuItem from './MenuItem';
 import Header from './Header';
 const cx = classNames.bind(styles);
 
-
 const defaulFn = () => {};
 function Menu({ children, items = [], onChange = defaulFn }) {
     const [history, setHistory] = useState([{ data: items }]);
@@ -23,8 +22,7 @@ function Menu({ children, items = [], onChange = defaulFn }) {
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
-                        }
-                        else {
+                        } else {
                             onChange(item);
                         }
                     }}
@@ -35,8 +33,8 @@ function Menu({ children, items = [], onChange = defaulFn }) {
     return (
         <Tippy
             interactive
-            visible
             delay={[0, 700]}
+            offset={[12,8]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1">
@@ -54,6 +52,9 @@ function Menu({ children, items = [], onChange = defaulFn }) {
                     </PropperWrapper>
                 </div>
             )}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </Tippy>
