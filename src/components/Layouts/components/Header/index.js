@@ -26,6 +26,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PropperWrapper } from '~/components/Propper';
 import AccountItem from '~/components/AccountItem';
+// import { MessageIcon } from '~/components/Icons';
+import Image from '~/components/image';
 
 // để đặt tên classnames có dấu - thì phải dùng bind
 const cx = classNames.bind(styles);
@@ -139,6 +141,7 @@ function Header() {
                         <Tippy delay={[0, 200]} content="Upload Video" placeholder="bottom">
                             <button className={cx('action-btn')}>
                                 <FontAwesomeIcon icon={faCloudUpload} />
+                                {/* <MessageIcon/> */}
                             </button>
                         </Tippy>
                     ) : (
@@ -149,12 +152,13 @@ function Header() {
                             </Button>
                         </>
                     )}
-                    <Menu items={currentUser? userMenu : MENU_ITEMS} onChange={handlerMenuChange}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handlerMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/cb9f67fa55c3dd4934a535d15e5dd8c2~c5_100x100.jpeg?x-expires=1660377600&x-signature=9pVRNtHjo0O4LTTfuGMmw6w5u2U%3D"
+                                fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
