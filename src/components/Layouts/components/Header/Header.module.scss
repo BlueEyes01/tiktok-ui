@@ -19,86 +19,6 @@
     background-image: linear-gradient(to right, var(--light), #c471ed, #f64f59);
 }
 
-.logo {
-}
-.search,
-.search-results {
-    width: 361px;
-}
-
-.search {
-    position: relative;
-    width: 361px;
-    height: var(--search-height);
-    padding-left: 16px;
-    background-color: rgba(22, 24, 35, 0.08);
-    border-radius: var(--search-boder-radius);
-    border: 1px solid transparent;
-    caret-color: var(--light);
-    display: flex;
-    input {
-        color: var(--black);
-        font-size: 1.6rem;
-
-        height: 100%;
-        background-color: transparent;
-
-        flex: 1;
-    }
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: aqua;
-    }
-
-    &::after {
-        content: '';
-        width: 1px;
-        top: var(--search-top-spacer);
-        right: var(--search-button-width);
-        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
-        position: absolute;
-        background-color: var(--light);
-    }
-    &:focus-within {
-        border-color: var(--light);
-    }
-}
-
-.search-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    padding: 5px 12px;
-}
-
-.clear,
-.loading {
-    background-color: transparent;
-    position: absolute;
-    right: calc(var(--search-button-width) + 16px);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--light);
-}
-
-.loading {
-}
-
-.search-btn {
-    width: var(--search-button-width);
-    height: 100%;
-    background-color: transparent;
-    border-top-right-radius: var(--search-boder-radius);
-    border-bottom-right-radius: var(--search-boder-radius);
-    font-size: 1.8rem;
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.06);
-        cursor: pointer;
-    }
-    color: var(--light);
-    &:active {
-        background-color: rgba(22, 24, 35, 0.1);
-    }
-}
-
 //acctions
 .actions {
     display: flex;
@@ -113,16 +33,33 @@
     cursor: pointer;
 }
 .action-btn {
+    position: relative;
+    display: flex;
     background-color: transparent;
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     color: #161823;
-    padding: 4px 12px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.badge {
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: 'ProximaNova', sans-serif;
+    background-color: var(--primary);
 }
 .user-avatar {
     width: 32px;
     height: 32px;
     object-fit: cover;
     border-radius: 50%;
-    margin-left: 12px;
+    margin-left: 14px;
     cursor: pointer;
 }
