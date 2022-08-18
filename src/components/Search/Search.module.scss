@@ -45,7 +45,7 @@
 .search-title {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     font-size: 1.4rem;
     font-weight: 600;
     padding: 5px 12px;
@@ -61,7 +61,17 @@
     color: var(--light);
 }
 
-
+.loading {
+    animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+    0% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
 
 .search-btn {
     width: var(--search-button-width);
