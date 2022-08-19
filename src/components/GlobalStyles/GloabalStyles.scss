@@ -29,6 +29,8 @@
     --text-color: #161823;
     --light: #5cd2ece3;
 
+    --font-family: var(--font-family);
+
     //default layout
     --default-layout-header-header: 60px;
     --default-layout-width: 1150px;
@@ -43,7 +45,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;

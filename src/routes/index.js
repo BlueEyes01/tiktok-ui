@@ -1,3 +1,5 @@
+import routesConfig from '~/config/routes';
+
 import { HeaderOnly } from '~/components/Layouts';
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
@@ -7,11 +9,11 @@ import Search from '~/pages/Search';
 
 // Publlic Routes
 const publicRoutes = [
-    { path: 'tiktok-ui', component: Home },
-    { path: 'tiktok-ui/Following', component: Following },
-    { path: 'tiktok-ui/@:nickname', component: Profile },
-    { path: 'tiktok-ui/Upload', component: Upload, layout: HeaderOnly },
-    { path: 'tiktok-ui/Search', component: Search, layout: null },
+    { path: routesConfig.home, component: Home },
+    { path: routesConfig.following, component: Following },
+    { path: routesConfig.profile, component: Profile },
+    { path: routesConfig.upload, component: Upload, layout: HeaderOnly },
+    { path: routesConfig.search, component: Search, layout: null },
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };
