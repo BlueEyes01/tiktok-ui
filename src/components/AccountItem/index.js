@@ -8,7 +8,7 @@ import styles from './AccountItem.module.scss';
 const cx = classNames.bind(styles);
 function AccountItem({ ...data }) {
     return (
-        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+        <Link to={`/tiktok-ui/@${data.nickname}`} className={cx('wrapper')}>
             <Images className={cx('avatar')} src={data.avatar} alt={data.first_name} />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
