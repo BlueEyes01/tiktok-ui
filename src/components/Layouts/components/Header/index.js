@@ -99,7 +99,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={'/'+ routesConfig.home} className={cx('logo')}>
+                <Link to={'/' + routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tik Tok" />
                 </Link>
 
@@ -108,7 +108,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 50]} content="Upload Video" placeholder="bottom">
+                            <Tippy delay={[0, 50]} content="Upload Video" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     {/* <FontAwesomeIcon icon={faCloudUpload} /> */}
                                     <UploadIcon />
