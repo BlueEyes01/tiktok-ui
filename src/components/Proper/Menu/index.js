@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { useState } from 'react';
 import styles from './Menu.module.scss';
 import Tippy from '@tippyjs/react/headless';
-import PropperWrapper from '~/components/Propper/Wrapper';
+import ProperWrapper from '~/components/Proper/Wrapper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 const cx = classNames.bind(styles);
@@ -39,7 +39,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaulFn }
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1">
-                    <PropperWrapper className={cx('menu-popper')}>
+                    <ProperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <Header
                                 title="language"
@@ -49,8 +49,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaulFn }
                             />
                         )}
 
-                        <div className =  {cx('menu-body')}>{renderItems()}</div>
-                    </PropperWrapper>
+                        <div className={cx('menu-body')}>{renderItems()}</div>
+                    </ProperWrapper>
                 </div>
             )}
             onHide={() => {

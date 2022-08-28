@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as searchServices from '~/apiServices/searchServices';
-import { Wrapper as PopperWrapper } from '~/components/Propper';
+import * as searchServices from '~/services/searchService';
+import { Wrapper as PopperWrapper } from '~/components/Proper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
@@ -54,7 +54,7 @@ function Search() {
         }
     };
     return (
-        //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context. 
+        //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
         <div>
             <HeadlessTippy
                 interactive
