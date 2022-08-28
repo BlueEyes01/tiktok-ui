@@ -5,7 +5,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
 import * as searchServices from '~/services/searchService';
-import { Wrapper as PopperWrapper } from '~/components/Proper';
+import { Wrapper as ProperWrapper } from '~/components/Proper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
@@ -61,12 +61,12 @@ function Search() {
                 visible={showResult && searchResult.length > 0}
                 render={(attrs) => (
                     <div className={cx('search-results')} tabIndex="-1" {...attrs}>
-                        <PopperWrapper>
+                        <ProperWrapper>
                             <h4 className={cx('search-title')}>Accounts</h4>
                             {searchResult.map((item) => (
                                 <AccountItem key={item.id} {...item} />
                             ))}
-                        </PopperWrapper>
+                        </ProperWrapper>
                     </div>
                 )}
                 onClickOutside={handleHideResult}

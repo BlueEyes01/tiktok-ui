@@ -1,5 +1,10 @@
-import './GloabalStyles.scss';
-function GloabalStyles({children}) {
+import './GlobalStyles.scss';
+import PropTypes from 'prop-types';
+function GlobalStyles({ children }) {
     return children;
 }
-export default GloabalStyles;
+
+GlobalStyles.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+export default GlobalStyles;
